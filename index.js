@@ -3,6 +3,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
 const fs = require('fs');
+const team = [];
 
 
 inquirer
@@ -30,6 +31,20 @@ inquirer
 
   ])
 
+
+  .then((response) => {
+    const manager = new Manager(
+      response.managerName,
+      response.managerId,
+      response.managerEmail,
+      response.managerOfficeNumber
+    );
+    team.push(manager);
+    console.log(team)
+  });
+
+
+
 inquirer
   .prompt([
     {
@@ -54,6 +69,18 @@ inquirer
     },
 
   ])
+  .then((response) => {
+    const engineer = new Engineer(
+      response.engineerName,
+      response.engineerId,
+      response.engineerEmail,
+      response.engineerGitHub
+    );
+    team.push(engineer);
+    console.log(team)
+  });
+
+
 
 inquirer
   .prompt([
@@ -69,7 +96,7 @@ inquirer
     },
     {
       type: 'input',
-      name: 'managerEmail',
+      name: 'internEmail',
       message: 'What is your interns email?',
     },
     {
@@ -79,9 +106,21 @@ inquirer
     },
 
   ])
-  .then((data) => {
-    console.log(data);
+  .then((response) => {
+    const intern = new Intern(
+      response.internName,
+      response.internId,
+      response.internEmail,
+      response.internSchool,
+    );
+    team.push(intern);
+    console.log(team)
+  });
 
 
-  })
+
+
+
+
+
 
