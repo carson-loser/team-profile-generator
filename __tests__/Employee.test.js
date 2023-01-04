@@ -1,48 +1,48 @@
-const Employee = require("../lib/Employee");
+const Employee = require('../lib/Employee');
 
-test("can create a new type of employee", () => {
+it('can create a new type of employee', () => {
   const employee = new Employee();
-  expect(typeof(employee)).toBe("object");
+  expect(typeof(employee)).toBe('object');
 });
 
-test("can set name", () => {
-  const name = "Josh";
+it('can set name', () => {
+  const name = 'Josh';
   const employee = new Employee(name);
   expect(employee.name).toBe(name);
 });
 
-test("can set an id", () => {
-  const testValue = 1;
-  const employee = new Employee("Fix", testValue);
-  expect(employee.id).toBe(testValue);
+it('can set an id', () => {
+  const tester = 1;
+  const employee = new Employee('Fix', tester);
+  expect(employee.id).toBe(tester);
 });
 
-test("can set email", () => {
-  const testValue = "test@test.com";
-  const employee = new Employee("Fix", 1, testValue);
-  expect(employee.email).toBe(testValue);
+it('can set email', () => {
+  const tester = 'test@test1.com';
+  const employee = new Employee('Fix', 1, tester);
+  expect(employee.email).toBe(tester);
 });
 
-test("can get name with getName()", () => {
-  const testValue = "Josh";
-  const employee = new Employee(testValue);
-  expect(employee.getName()).toBe(testValue);
+it('can get name with getName()', () => {
+  const tester = 'Josh';
+  const employee = new Employee(tester);
+  expect(employee.getName()).toBe(tester);
 });
 
-test("can get id with getId()", () => {
-  const testValue = 1;
-  const employee = new Employee("Fix", testValue);
-  expect(employee.getId()).toBe(testValue);
+it('can get id with getId()', () => {
+  const tester = 1;
+  const employee = new Employee('Fix', tester);
+  expect(employee.getId()).toBe(tester);
 });
 
-test("can get email with getEmail()", () => {
-  const testValue = "test@test.com";
-  const employee = new Employee("Fix", 1, testValue);
-  expect(employee.getEmail()).toBe(testValue);
+it('can get email with getEmail()', () => {
+  const tester = 'test@test2.com';
+  const employee = new Employee('Fix', 1, tester);
+  expect(employee.getEmail()).toBe(tester);
 });
 
-test("getRole() returns \"Employee\"", () => {
-  const testValue = "Employee";
-  const employee = new Employee("Josh", 1, "test@test.com");
-  expect(employee.getRole()).toBe(testValue);
+it('getRole() returns \'Employee\'', () => {
+  const tester = 'Employee';
+  const employee = new Employee('Josh', 1, 'test@test3.com');
+  expect(employee.getRole()).toBe(tester);
 });

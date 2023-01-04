@@ -3,7 +3,7 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
 const fs = require('fs');
-const team = [];
+const userTeam = [];
 
 function main() {
   function newManager() {
@@ -40,9 +40,9 @@ function main() {
           response.managerEmail,
           response.managerOfficeNumber
         );
-        team.push(manager);
+        userTeam.push(manager);
         newMember();
-        // console.log(team)
+        // console.log(userTeam)
       });
   }
 
@@ -69,14 +69,10 @@ function main() {
             newIntern();
             break;
           default:
-            console.log(team);
+            console.log(userTeam);
         }
       });
   }
-
-
-
-
 
   function newEngineer() {
     inquirer
@@ -108,11 +104,11 @@ function main() {
           response.engineerName,
           response.engineerId,
           response.engineerEmail,
-          response.engineerGitHub
+          response.engineerGithub,
         );
-        team.push(engineer);
+        userTeam.push(engineer);
         newMember();
-        // console.log(team)
+        // console.log(userTeam)
       });
 
   }
@@ -148,8 +144,8 @@ function main() {
           response.internEmail,
           response.internSchool,
         );
-        team.push(intern);
-        // console.log(team)
+        userTeam.push(intern);
+        // console.log(userTeam)
         newMember();
       });
   }
